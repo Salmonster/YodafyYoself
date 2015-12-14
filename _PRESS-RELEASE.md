@@ -19,26 +19,46 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
+  Yoda-fy Yo'Self!
+
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+  Turn your speech into Yoda-speak in anticipation of the latest Star Wars release.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+  Sometimes to get in the spirit of a special event, it's fun to impersonate an iconic character from the story that the event is based on. For example, around Christmas time people dress up like Santa Claus. Around the time of Star Wars movie releases, people dress up like their favorite Star Wars character. This app lets fans of Yoda discover how he would say otherwise normal English speech patterns to help them in their impersonations or just for the fun of discovering.
+
 ## Problem ##
   > Describe the problem your product solves.
+
+  Anyone unfamiliar with the character Yoda who wishes to learn his speech style, either to impersonate him or just to become familiar with his persona, can use the app to help bridge the gap in understanding between themselves and diehard Yoda fans.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
+  A user can simply type in whatever they wish Yoda to say and submit their text to the app. Within a few seconds, the page will then render a translated version of the speech they entered.
+
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+
+  "Speak like Yoda you will, with our fun new Yoda-fy app!"
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
 
+  Simply load the webpage and type the text you desire to see translated into Yoda-speech in the text input field and submit by clicking the button or hitting enter.
+
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
+  "I was going around trying to hypothetically quote Yoda like I knew the movie franchise well, but I sounded ridiculous. With the 'Yoda-fy Yo'Self' app, I now know exactly what Yoda would say and I impress my Star Wars fan-friends with my impersonations!"
+
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+
+  The app is still in development phase but has basic functionality. Simply load the html file into your browser. The API connection should be live and should give you the output you're looking for.
+
+  
