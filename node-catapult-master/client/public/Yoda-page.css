@@ -1,0 +1,35 @@
+
+body {
+  color: white;
+  font: italic bold 20px/30px Georgia, serif;
+  background-color: black;
+  background-image: url("yodaBG.jpg");
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 5%;
+}
+
+p {
+  padding-top: 4em;
+  text-align: left;
+}
+
+.form-control {
+  width: 40%;
+  /*margin: auto;*/
+  text-align: center;
+}
+
+.submission {
+  width: 0;
+  margin-left: 28%;
+  color: black;
+}
+
+.yoda {
+  color: white;
+  width: 30%;
+  margin-left: 60%;
+  margin-top: 20%;
+  text-align: left;
+}
