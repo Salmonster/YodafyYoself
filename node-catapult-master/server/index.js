@@ -1,7 +1,7 @@
 var browserify = require('browserify-middleware')
 var express = require('express')
 var Path = require('path')
-var axios = require('axios')
+// var axios = require('axios')
 var routes = express.Router()
 
 //
@@ -21,9 +21,9 @@ routes.get('/api/tags-example', function(req, res) {
 })
 
 //NPM install --save axios to do an API request
-routes.get('/phrase', function (req, res) {
+// routes.get('/phrase', function (req, res) {
   // axios.get('...', { headers: {} })
-})
+// })
 
 //
 // Static assets (html, etc.)

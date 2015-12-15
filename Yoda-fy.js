@@ -1,4 +1,5 @@
 
+
 $( "#target" ).submit(function( event ) {
   var phrase = $(".form-control").val();
   console.log(phrase);
@@ -10,8 +11,8 @@ $( "#target" ).submit(function( event ) {
             $(".yoda").text('');
             $(".form-control").val('');
             $(".yoda").append(data);
-            var msg = new SpeechSynthesisUtterance(data);
             var voices = speechSynthesis.getVoices();
+            var msg = new SpeechSynthesisUtterance(data);
             msg.voice = voices[21];
             speechSynthesis.speak(msg);
           },
