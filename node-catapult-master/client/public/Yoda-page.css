@@ -2,7 +2,7 @@
 body {
   color: white;
   font: italic bold 20px/30px Georgia, serif;
-  background: black;
+  background-color: black;
   background-image: url("yodaBG.jpg");
   background-repeat: no-repeat;
   background-position-x: 50%;
