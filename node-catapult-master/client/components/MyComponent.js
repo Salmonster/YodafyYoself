@@ -33,6 +33,7 @@ Yoda.controller = function () {
   ctrl.yodaResponse = null;
 
   ctrl.yodafy = function () {
+    event.preventDefault();
     Yoda.submit(ctrl.phrase)
     .then(function(data) {
       var yodaTimer = setInterval(function() {
@@ -48,7 +49,6 @@ Yoda.controller = function () {
           speechSynthesis.speak(msg);
           clearInterval(yodaTimer);
         }
-        event.preventDefault();
       }, 200).then(null, function(data) {
           console.log(data);
       })
