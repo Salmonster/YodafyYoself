@@ -1,16 +1,29 @@
 var m = require('mithril')
+// var unirest = require('unirest')
 var Yoda = module.exports;
 
-//Model -- only 1 API request so not placed in its own module
+// Model -- only 1 API request so not placed in its own module
 Yoda.submit = function (phrase) {
   console.log(phrase);
-  return m.request({ 
-    method: 'GET', 
-    url: "https://yoda.p.mashape.com/yoda?sentence=" + phrase, 
-    headers: {"X-Mashape-Key": "Vs6AqovCQ2msh3xrMJLgHUYnSvPXp17ZFcJjsnlqUlWYcq3SS9", 
-              "Accept": "text/plain"}
-    });
+  return m.request({method: 'GET', url: "https://yoda.p.mashape.com/yoda?sentence=" + phrase,
+    config: function(xhr, options) {
+        xhr.setRequestHeader("X-Mashape-Key", "Vs6AqovCQ2msh3xrMJLgHUYnSvPXp17ZFcJjsnlqUlWYcq3SS9")
+        xhr.setRequestHeader("Accept", "text/plain")
+    }}).then(function(data) {
+        console.log('success: ', data)
+    }, function(err) {
+        console.log('error: ', err)
+    })
 }
+
+// Yoda.submit = function (phrase) {
+//   unirest.get("https://yoda.p.mashape.com/yoda?sentence=You+will+learn+how+to+speak+like+me+someday.++Oh+wait.")
+//   .header("X-Mashape-Key", "Vs6AqovCQ2msh3xrMJLgHUYnSvPXp17ZFcJjsnlqUlWYcq3SS9")
+//   .header("Accept", "text/plain")
+//   .end(function (result) {
+//     console.log(result.status, result.headers, result.body);
+//   });
+// }
 
 //Controller
 Yoda.controller = function () {

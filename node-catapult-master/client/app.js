@@ -8,7 +8,7 @@ var MyComponent = require('./components/MyComponent')
 //
 // Client-side routing
 //
-m.route.mode = 'pathname' //probably don't need this...?
+m.route.mode = 'pathname'
 m.route(document.getElementById('app'), '/', {
 
   '/': MyComponent
