@@ -35,18 +35,23 @@ Yoda.controller = function () {
   ctrl.yodafy = function () {
     Yoda.submit(ctrl.phrase)
     .then(function(data) {
-      console.log(data);
-      // deserialize: function(value) {return value;}
-      ctrl.phrase = '';
-      // ctrl.yodaResponse = '';
-      ctrl.yodaResponse = data;
-      var voices = speechSynthesis.getVoices();
-      var msg = new SpeechSynthesisUtterance(data);
-      msg.voice = voices[21];
-      speechSynthesis.speak(msg);
-      event.preventDefault();
-    }).then(null, function(data) {
+      var yodaTimer = setInterval(function() {
+        var voices = speechSynthesis.getVoices();
         console.log(data);
+        // deserialize: function(value) {return value;}
+        ctrl.phrase = '';
+        // ctrl.yodaResponse = '';
+        if (voices.length !== 0) {
+          ctrl.yodaResponse = data;
+          var msg = new SpeechSynthesisUtterance(data);
+          msg.voice = voices[21];
+          speechSynthesis.speak(msg);
+          clearInterval(yodaTimer);
+        }
+        event.preventDefault();
+      }, 200).then(null, function(data) {
+          console.log(data);
+      })
     })
   }
 }
