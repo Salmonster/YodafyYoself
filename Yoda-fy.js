@@ -21,6 +21,6 @@ $( "#target" ).submit(function( event ) {
           }
   })
   // return false;
-  // event.preventDefault(); 
-  // use either of the above lines, or keep 'action="#"' in html form tag--but why?
+  event.preventDefault(); 
+  // use either of the above lines, or keep 'action="#"' in html form tag
 })
