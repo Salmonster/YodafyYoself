@@ -1,7 +1,6 @@
 var browserify = require('browserify-middleware')
 var express = require('express')
 var Path = require('path')
-// var axios = require('axios')
 var routes = express.Router()
 
 //
@@ -9,7 +8,8 @@ var routes = express.Router()
 //
 // The next line of code looks at app.js and all of its "required" modules, which should
 // include all of your app's JS files, and then refers to them all as "app-bundle.js" or
-// whatever you want to call it, so you can have just one script tag in your html.
+// whatever you want to call it, so you can have just one script tag in your html and one
+// http request for all of them.
 // That's your Express and Browserify working for you!
 routes.get('/app-bundle.js', browserify('./client/app.js'))
 
@@ -19,11 +19,6 @@ routes.get('/app-bundle.js', browserify('./client/app.js'))
 routes.get('/api/tags-example', function(req, res) {
   res.send(['node', 'express', 'browserify', 'mithril'])
 })
-
-//NPM install --save axios to do an API request
-// routes.get('/phrase', function (req, res) {
-  // axios.get('...', { headers: {} })
-// })
 
 //
 // Static assets (html, etc.)

@@ -1,5 +1,4 @@
 var m = require('mithril')
-// var unirest = require('unirest')
 var Yoda = module.exports;
 
 // Model -- only 1 API request so not placed in its own module
@@ -8,7 +7,7 @@ Yoda.submit = function (phrase) {
   return m.request({
     method: 'GET', 
     url: "https://yoda.p.mashape.com/yoda?sentence=" + phrase,
-    //deserialize tells API to return value as-is, not JSON
+    //deserialize tells the API to return the response value as-is, not as JSON
     deserialize: function(value) {return value;},
     config: function(xhr, options) {
         xhr.setRequestHeader("X-Mashape-Key", "Vs6AqovCQ2msh3xrMJLgHUYnSvPXp17ZFcJjsnlqUlWYcq3SS9")
@@ -22,14 +21,6 @@ Yoda.submit = function (phrase) {
     })
 }
 
-// Yoda.submit = function (phrase) {
-//   unirest.get("https://yoda.p.mashape.com/yoda?sentence=You+will+learn+how+to+speak+like+me+someday.++Oh+wait.")
-//   .header("X-Mashape-Key", "Vs6AqovCQ2msh3xrMJLgHUYnSvPXp17ZFcJjsnlqUlWYcq3SS9")
-//   .header("Accept", "text/plain")
-//   .end(function (result) {
-//     console.log(result.status, result.headers, result.body);
-//   });
-// }
 
 //Controller
 Yoda.controller = function () {
@@ -74,7 +65,6 @@ Yoda.view = function (ctrl) {
           ctrl.phrase = e.currentTarget.value;
         },
         placeholder: 'Write in here...'
-        // aria-describedby: 'basic-addon1'
         }),
       m('br'),
       m('.submission', [
