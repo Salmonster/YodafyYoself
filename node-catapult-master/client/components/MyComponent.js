@@ -5,12 +5,18 @@ var Yoda = module.exports;
 // Model -- only 1 API request so not placed in its own module
 Yoda.submit = function (phrase) {
   console.log(phrase);
-  return m.request({method: 'GET', url: "https://yoda.p.mashape.com/yoda?sentence=" + phrase,
+  return m.request({
+    method: 'GET', 
+    url: "https://yoda.p.mashape.com/yoda?sentence=" + phrase,
+    //deserialize tells API to return value as-is, not JSON
+    deserialize: function(value) {return value;},
     config: function(xhr, options) {
         xhr.setRequestHeader("X-Mashape-Key", "Vs6AqovCQ2msh3xrMJLgHUYnSvPXp17ZFcJjsnlqUlWYcq3SS9")
         xhr.setRequestHeader("Accept", "text/plain")
-    }}).then(function(data) {
-        console.log('success: ', data)
+    }
+  }).then(function(data) {
+        console.log('success: ', data);
+        return data;
     }, function(err) {
         console.log('error: ', err)
     })
@@ -38,20 +44,18 @@ Yoda.controller = function () {
     .then(function(data) {
       var yodaTimer = setInterval(function() {
         var voices = speechSynthesis.getVoices();
-        console.log(data);
-        // deserialize: function(value) {return value;}
         ctrl.phrase = '';
-        // ctrl.yodaResponse = '';
         if (voices.length !== 0) {
           ctrl.yodaResponse = data;
           var msg = new SpeechSynthesisUtterance(data);
           msg.voice = voices[21];
           speechSynthesis.speak(msg);
           clearInterval(yodaTimer);
+          //Because setInterval is outside of mithril's event listening, the page must be redrawn
+          //manually after setInterval is completed in order to update the view.
+          m.redraw();
         }
-      }, 200).then(null, function(data) {
-          console.log(data);
-      })
+      }, 200)
     })
   }
 }
