@@ -25,6 +25,7 @@ $( "#target" ).submit(function( event ) {
         },
     error: function(data) {
             console.log(data);
+            alert("Sorry, there's an error with the API. Please reload the page and try again.");
           }
   })
   // return false;

@@ -17,7 +17,8 @@ Yoda.submit = function (phrase) {
         console.log('success: ', data);
         return data;
     }, function(err) {
-        console.log('error: ', err)
+        console.log('error: ', err);
+        alert("Sorry, there's an error with the API. Please reload the page and try again.");
     })
 }
 
