@@ -5,10 +5,10 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "main": "Mithril\ version/server/index.js",
+  "main": "Mithril-Version/server/index.js",
   "scripts": {
-    "start": "nodemon Mithril\ version/server/ --ignore client/",
-    "test": "Mithril\ version/test/run.sh"
+    "start": "./Mithril-Version/node_modules/.bin/nodemon Mithril-Version/server/ --ignore client/",
+    "test": "./Mithril-Version/test/run.sh"
   },
   "author": "Salman Oskooi <soskooi@gmail.com>",
   "license": "CC-BY-4.0",
