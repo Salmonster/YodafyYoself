@@ -17,7 +17,7 @@ $( "#target" ).submit(function( event ) {
             if (voices.length !== 0) {
               $(".yoda").append(data);
               var msg = new SpeechSynthesisUtterance(data);
-              msg.voice = voices[21];
+              msg.voice = voices[2]; //Albert voice
               speechSynthesis.speak(msg);
               clearInterval(yodaTimer);
             }
