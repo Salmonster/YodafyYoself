@@ -1,5 +1,5 @@
 {
-  "name": "Yodafy-YoSelf-mithril version",
+  "name": "Yodafy-YoSelf-mithril-version",
   "version": "1.0.0",
   "description": "My Yoda-fy app refactored into Mithril, built on top of a rapid project starter for Node and Browserify.",
   "engines": {
