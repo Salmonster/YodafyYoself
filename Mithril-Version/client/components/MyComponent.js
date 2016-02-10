@@ -15,11 +15,16 @@ Yoda.submit = function (phrase) {
     }
   }).then(function(data) {
         console.log('success: ', data);
+        $(".form-control").val('');
         return data;
     }, function(err) {
         console.log('error: ', err);
         alert("Sorry, there's an error with the API. Please reload the page and try again.");
     })
+    // .catch(function(err) {
+    //   console.log('error: ', err);
+    //   alert("Sorry, there's an error with the API. Please reload the page and try again.");
+    // })
 }
 
 

@@ -8,10 +8,9 @@ var routes = express.Router()
 //
 // The next line of code looks at app.js and all of its "required" modules, which should
 // include all of your app's JS files, and then refers to them all as "app-bundle.js" or
-// whatever you want to call it, so you can have just one script tag in your html and one
-// http request for all of them.
+// whatever you want to call it, so you can have just one script tag in your html.
 // That's your Express and Browserify working for you!
-routes.get('/app-bundle.js', browserify('./client/app.js'))
+routes.get('/app-bundle.js', browserify('./Mithril-Version/client/app.js'))
 
 //
 // Example endpoint (also tested in test/server/index_test.js)
