@@ -1,4 +1,4 @@
-var m = require('mithril')
+var m = require('mithril');
 var Yoda = module.exports;
 
 // Model -- only 1 API request so not placed in its own module
