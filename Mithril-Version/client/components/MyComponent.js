@@ -1,13 +1,12 @@
 var m = require('mithril');
 var Yoda = module.exports;
 
-// Model -- only 1 API request so not placed in its own module
+// Model
 Yoda.submit = function (phrase) {
   console.log(phrase);
   return m.request({
     method: 'GET', 
     url: "https://yoda.p.mashape.com/yoda?sentence=" + phrase,
-    //deserialize tells the API to return the response value as-is, not as JSON
     deserialize: function(value) {return value;},
     config: function(xhr, options) {
         xhr.setRequestHeader("X-Mashape-Key", "Vs6AqovCQ2msh3xrMJLgHUYnSvPXp17ZFcJjsnlqUlWYcq3SS9")
@@ -21,10 +20,6 @@ Yoda.submit = function (phrase) {
         console.log('error: ', err);
         alert("Sorry, there's an error with the API. Please reload the page and try again.");
     })
-    // .catch(function(err) {
-    //   console.log('error: ', err);
-    //   alert("Sorry, there's an error with the API. Please reload the page and try again.");
-    // })
 }
 
 
@@ -45,7 +40,9 @@ Yoda.controller = function () {
         if (voices.length !== 0) {
           ctrl.yodaResponse = data;
           var msg = new SpeechSynthesisUtterance(data);
-          msg.voice = voices[2]; //Albert voice
+          // no more Albert voice that sounded like Yoda :'-(
+          // we'll just pick one...
+          msg.voice = voices[2];
           speechSynthesis.speak(msg);
           clearInterval(yodaTimer);
           //Because setInterval is outside of mithril's event listening, the page must be redrawn
@@ -67,8 +64,8 @@ Yoda.view = function (ctrl) {
       }, [
       m('input[type=text]', {
         class: 'form-control',
-        oninput: function(e) {
-          ctrl.phrase = e.currentTarget.value;
+        oninput: function(event) {
+          ctrl.phrase = event.currentTarget.value;
         },
         placeholder: 'Write in here...'
         }),

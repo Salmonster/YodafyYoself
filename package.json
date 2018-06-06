@@ -7,7 +7,7 @@
   },
   "main": "Mithril-Version/server/index.js",
   "scripts": {
-    "start": "./Mithril-Version/node_modules/.bin/nodemon Mithril-Version/server/ --ignore client/",
+    "start": "./Mithril-Version/node_modules/.bin/nodemon Mithril-Version/server/index.js --ignore client/",
     "test": "./Mithril-Version/test/run.sh"
   },
   "author": "Salman Oskooi <soskooi@gmail.com>",

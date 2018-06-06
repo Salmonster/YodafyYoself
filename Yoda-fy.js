@@ -13,11 +13,12 @@ $( "#target" ).submit(function( event ) {
             console.log(data);
             $(".yoda").text('');
             $(".form-control").val('');
-            console.log(voices.length);
             if (voices.length !== 0) {
               $(".yoda").append(data);
               var msg = new SpeechSynthesisUtterance(data);
-              msg.voice = voices[2]; //Albert voice
+              // no more Albert voice that sounded like Yoda :'-(
+              // we'll just pick one...
+              msg.voice = voices[2];
               speechSynthesis.speak(msg);
               clearInterval(yodaTimer);
             }
@@ -28,7 +29,7 @@ $( "#target" ).submit(function( event ) {
             alert("Sorry, there's an error with the API. Please reload the page and try again.");
           }
   })
+  // use either of the following lines, or keep 'action="#"' in html form tag
   // return false;
   event.preventDefault(); 
-  // use either of the above lines, or keep 'action="#"' in html form tag
 })
